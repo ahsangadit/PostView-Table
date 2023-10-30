@@ -1,0 +1,52 @@
+/* Styling for the main container */
+.postview-table {
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Styling for the search input field */
+#search-posts {
+    width: 30%; /* Limit the width to 30% */
+    padding: 5px;
+    margin-bottom: 10px;
+    float: left; /* Float the search input to the left */
+    border: 1px solid #ccc;
+}
+
+/* Clear the float to prevent issues with subsequent elements */
+.clear-float {
+    clear: both;
+}
+
+/* Styling for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+/* Styling for table headers */
+th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Styling for table cells */
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Alternate row colors for improved readability */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Highlight table rows on hover */
+tr:hover {
+    background-color: #f5f5f5;
+}
