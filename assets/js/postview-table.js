@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    // AJAX request on search input change
+    
     $('#search-posts').on('input', function() {
         var searchTerm = $(this).val();
         $.ajax({

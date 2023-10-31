@@ -1,7 +1,6 @@
 <?php
 class FrontendPostViewTable {
     public function __construct() {
-        // Frontend-related functionality here
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts_and_styles'));
         add_shortcode('postview-table', array($this, 'postview_table_shortcode'));
         add_action('wp_ajax_filter_posts', array($this, 'filter_posts')); 
@@ -23,6 +22,7 @@ class FrontendPostViewTable {
     public function postview_table_shortcode($atts) {
         $show_filter = get_option('show_filter');
         $columns_settings = get_option('columns');
+        $number_of_items = get_option('number_of_items');
     
         $available_columns = array(
             'title' => 'Post Title',
@@ -31,7 +31,7 @@ class FrontendPostViewTable {
             'categories' => 'Post Categories',
         );
     
-        $columns = $selectedColumns = $this->get_selected_columns();
+        $columns = $this->get_selected_columns();
 
     
         // Start generating the HTML
@@ -53,7 +53,7 @@ class FrontendPostViewTable {
         $output .= '<tbody>';
         $args = array(
             'post_type' => 'post', 
-            'posts_per_page' => 10, 
+            'posts_per_page' => $number_of_items, 
         );
     
         $query = new WP_Query($args);
@@ -98,10 +98,11 @@ class FrontendPostViewTable {
     public function filter_posts() {
         $search = sanitize_text_field($_POST['search']);
         $selectedColumns = $this->get_selected_columns();
+        $number_of_items = get_option('number_of_items');
         
         $args = array(
             'post_type' => 'post',
-            'posts_per_page' => -1,
+            'posts_per_page' => $number_of_items,
             's' => $search,
         );
 

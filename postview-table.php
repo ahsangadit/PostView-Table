@@ -1,6 +1,7 @@
 <?php
 /*
 Plugin Name: PostView Table
+Description: The PostView Table WordPress plugin allows you to display posts in a customizable table format on your WordPress site. It provides options to control the number of items, choose which columns to display, and enable a search filter for easy post retrieval.
 Version: 1.0
 Author: Ahsan Amin
 */
